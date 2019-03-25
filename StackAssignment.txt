@@ -1,0 +1,51 @@
+import java.util.*;
+
+public class StackAssignment{
+
+    static void push(Stack stack,Student student)
+    {
+        stack.push(student.name);
+        stack.push(student.age);
+        stack.push(student.school);
+        //System.out.println(stack);
+
+    }
+    
+    static Object pop(Stack stack)
+    {
+        return stack.pop();
+    }
+    
+    static Object peek(Stack stack)
+    {
+        return stack.peek();
+    }
+    
+     public static void main(String []args){
+        Stack stack = new Stack();
+        Student student1 = new Student("Amit",24,"KV");
+        Student student2 = new Student("Praveen",25,"DPS");
+        Student student3 = new Student("Rohit",26,"Bhavans");
+        Student student4 = new Student("Sam",27,"DAV");
+        push(stack,student1);
+        push(stack,student2);
+        push(stack,student3);
+        push(stack,student4);
+        System.out.println(peek(stack));
+        if (!stack.empty())
+            System.out.println(pop(stack));
+     }
+}
+
+class Student
+{
+    String name;
+    int age;
+    String school;
+    Student(String name, int age, String school)
+    {
+        this.name = name;
+        this.age = age;
+        this.school = school;
+    }
+}
